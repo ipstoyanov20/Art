@@ -26,7 +26,7 @@ interface Props {
   }
 }
 
-export default async function Page({searchParams}: Props = {searchParams: {}}) {
+export default async function Page({searchParams}: Props) {
   const {date = "desc", price, color, category, size, search} = searchParams
   const priceOrder= price ? `| order(price ${price})` : ""
   const dateOrder = date ? `| order(_createdAt ${date})` : ""
@@ -55,8 +55,6 @@ export default async function Page({searchParams}: Props = {searchParams: {}}) {
       "slug": slug.current,
     }`
   )
-  console.log(products)
-
   return (
     <div>
       <div className="px-4 pt-20 text-center">

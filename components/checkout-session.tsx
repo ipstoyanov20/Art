@@ -13,7 +13,10 @@ export function CheckoutSession({ customerDetails }: Props) {
   const { clearCart } = useShoppingCart()
 
   useEffect(() => {
-    if (customerDetails) clearCart()
+    if (customerDetails) 
+    {
+      clearCart()
+    }
   }, [customerDetails])
 
   if (!customerDetails) {
