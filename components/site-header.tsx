@@ -20,11 +20,6 @@ export function SiteHeader() {
 
   const defaultSearchQuery = serachParams.get('search') ?? ''
 
-  if(process.env.NODE_ENV === "production" && pathname.startsWith('/studio'))
-  {
-    router.replace('/')
-  }
-
   if(pathname.startsWith("/studio")) return null
 
   function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -33,8 +28,6 @@ export function SiteHeader() {
     const searchQuery = formData.get('search') as string
     router.replace(`/?search=${searchQuery}`)
   }
-
-          
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
@@ -69,7 +62,6 @@ export function SiteHeader() {
             </Link>
 
           )}
-          
         </div>
       </div>
     </header>
