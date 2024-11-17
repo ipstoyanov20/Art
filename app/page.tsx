@@ -13,7 +13,6 @@ import { ProductSort } from "@/components/product-sort";
 
 
 
-
 interface Props {
   searchParams: {
     date?: string
@@ -27,6 +26,7 @@ interface Props {
 }
 
 export default async function Page({searchParams}: Props) {
+    // await seedSanityData();
   const {date = "desc", price, color, category, size, search} = searchParams
   const priceOrder= price ? `| order(price ${price})` : ""
   const dateOrder = date ? `| order(_createdAt ${date})` : ""
